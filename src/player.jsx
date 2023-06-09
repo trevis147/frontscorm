@@ -21,7 +21,6 @@ const Player = ({ sco, startUrl }) => {
     <div>
       <h2>Player</h2>
       <iframe src={startUrl} title="SCORM Player" width="800" height="600" />
-      <p>Title: {sco && sco.get("cmi.core.lesson_location")}</p>
     </div>
   );
 };
