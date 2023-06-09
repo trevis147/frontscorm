@@ -1,0 +1,51 @@
+{
+  "name": "scormfront",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@thewillhuang/scorm-hook": "^4.0.4",
+    "@upandgo/react-scorm-container": "^2.1.6",
+    "@zip.js/zip.js": "^2.7.14",
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12",
+    "jszip": "^3.10.1",
+    "pipwerks-scorm-api-wrapper": "^0.1.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-html-parser": "^2.0.2",
+    "react-scorm": "^0.0.1",
+    "react-scorm-provider": "^0.2.4",
+    "react-scripts": "5.0.1",
+    "scorm-api-wrapper": "^0.0.2",
+    "tszip": "^1.0.0",
+    "unzipper": "^0.10.14"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "path-browserify": "^1.0.1",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5"
+  }
+}
