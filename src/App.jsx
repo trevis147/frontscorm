@@ -7,20 +7,18 @@ const App = () => {
   const [sco, setSco] = useState(null);
 
   useEffect(() => {
-    window.API = 'https://scorm-rose.vercel.app/imsmanifest.xm'
-    
-    fetch("https://scorm-rose.vercel.app/imsmanifest.xml")
+    window.API = "/static/conduta/imsmanifest.xml"
+    fetch("/static/conduta/imsmanifest.xml")
       .then((response) => response.text())
       .then((manifestContent) => {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(manifestContent, "text/xml");
         const resources = xmlDoc.getElementsByTagName("resource");
-        debugger
-        const indexResource = resources[0]; 
+        const indexResource = resources[0];
 
         if (indexResource) {
           const indexUrl = indexResource.getAttribute("href");
-          const manifestBaseUrl = "https://scorm-rose.vercel.app/"; 
+          const manifestBaseUrl = "http://localhost:3000/static/conduta/";
           const indexFullPath = new URL(indexUrl, manifestBaseUrl).toString();
           setStartUrl(indexFullPath);
         }
@@ -31,14 +29,16 @@ const App = () => {
   }, []);
 
   const handleScoInitialized = (sco) => {
-    debugger
+    debugger;
     setSco(sco);
   };
 
   return (
     <>
       <ScormProvider
-        manifestUrl={"https://scorm-rose.vercel.app/imsmanifest.xml"}
+        debug={true}
+        version="1.2"
+        manifestUrl={"/static/conduta/imsmanifest.xml"}
         onScoInitialized={handleScoInitialized}
       >
         <Player sco={sco} startUrl={startUrl} />
